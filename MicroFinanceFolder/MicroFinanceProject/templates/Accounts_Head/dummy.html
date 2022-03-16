@@ -1,0 +1,34 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block title %}
+<title xmlns="http://www.w3.org/1999/html">Customer Response</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <center><h2>Customer Response</h2></center>
+        {% for i in obj1 %}
+        {% if i.user_id == obj2 %}
+        <p>Dear<b> {{obj.loan_id.user.first_name}} {{obj.loan_id.user.last_name}}</b>, Your loan application with <b>Application ID {{ obj.loan_id.user_id }}</b>
+        has been sanctioned, If you agreed with the loan details provided to you please respond by clicking <b>Approve My  Loan</b>
+        to get loan disbursed in your account.
+        If you <b>DISAGREE</b> please select, I am <b>DISAGREE</b>
+
+              <h2>Loan Details</h2>
+    <h4>Loan Application ID: {{ obj.loan_id.user_id }}</h4>
+    <h4>Sanctioned Amount: {{ obj.sanction_amt }}</h4>
+    <h4>Interest Rate: {{ obj.rate_of_interest }}%</h4>
+    <h4>Loan Tenure: {{ obj.loan_tenure }} Months</h4>
+    <h4>Total Amount: {{ obj.total_amt }} Rupees</h4>
+        {% endif %}
+        {% endfor %}
+
+        <form method="post">
+        {% csrf_token %}
+        <h3>I am agree, please <button type="submit" class="btn btn-success">APPROVE MY LOAN</button> </h3>
+        <H3>I am not agreed with the loan details</H3>
+        <button class="btn btn-danger"><a href="#" style="color:yellow">DISAGREE</a> </button>
+    </form>
+    </div>
+</div>
+{% endblock %}

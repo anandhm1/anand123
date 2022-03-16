@@ -1,0 +1,53 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <b>Accounts Head </b>  <a href="{% url 'acc_dashboard' %}">Back To Dashboard</a>
+         <h2 style="color:red">Accounts Head Section </h2>
+    <table border="3px">
+        <tr>
+            <th>customer_id</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>sanction_amt</th>
+            <th>interest</th>
+            <th> gst</th>
+            <th>mothly_emi_amt</th>
+            <th>due_date</th>
+            <th>PDF</th>
+            <th>Loan Status</th>
+            <th>Send Email</th>
+        </tr>
+        {% for i in obj %}
+        <tr>
+            <td>{{ i.customer_id }}</td>
+            <td>{{ i.first_name  }}</td>
+            <td>{{ i.last_name  }}</td>
+            <td>{{ i.sanction_amt  }}</td>
+            <td>{{ i.interest  }}</td>
+            <td>{{ i.gst  }}</td>
+            <td>{{ i.mothly_emi_amt }}</td>
+            <td>{{i.due_date}}</td>
+            <td><button><a href="{% url 'emi_invoice_pdf_view' i.id %}"> Generate PDF</a></td>
+            <td>Loan Disbursed</td>
+            <td><button><a href="{% url 'loan_email' %}">Send Email</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+<!--       {% for customer in object_list %}-->
+<!--    <br>-->
+<!--    <h1>Hello{{ customer }}<h1>-->
+<!--    <a href="{% url 'customer-pdf-view' customer.pk %}"><button class="btn btn-primary">pdf</button> </a>-->
+<!--    <br>-->
+<!--    <hr>-->
+<!--    {% endfor %}-->
+
+{% endblock %}
+ </div>
+</div>

@@ -1,0 +1,66 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+         <h2 style="color:red">Accounts Head Section </h2>
+    <table border="3px">
+        <tr>
+            <th>Customer Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sanctioned Amount</th>
+            <th>rate_of_interest</th>
+             <th>loan_tenure</th>
+             <th>total_amt</th>
+            <th>Send Response</th>
+            <th>Customer Response</th>
+            <th>Fill EMI Details</th>
+        </tr>
+        {% for i in obj %}
+        <tr>
+            <td>{{i.loan_id.user.id}}</td>
+            <td>{{i.loan_id.user.first_name}}</td>
+            <td>{{i.loan_id.user.last_name}}</td>
+            <td>{{i.sanction_amt}}</td>
+            <td>{{i.rate_of_interest}}</td>
+            <td>{{i.loan_tenure}}</td>
+            <td>{{i.total_amt}}</td>
+<!--            <td>1  {{i.loan_id_id}}</td>-->
+<!--            <td>2  {{i.loan_id_id.customer_id}}</td>-->
+<!--            <td>3  {{i.loan_id_id_customer_id}}</td>-->
+<!--            <td> 4 {{i.loan_id.id}}</td>-->
+<!--             <td> 5 {{i.customer_id}}</td>-->
+            {% if i.is_customer_responsed %}
+            <td>Customer Responded</td>
+            {% else %}
+            <td><button><a href="{% url 'customer_response' i.loan_id.user.id %}">Send Response to Customer</a></button></td>
+            {% endif %}
+            {% if i.is_customer_responsed %}
+            <td>Agreed</td>
+            {% if i.is_emi_details_filled %}
+            <td>Application Processed to further desk</td>
+            {% else %}
+              <td><button class="btn btn-success"><a href="{% url 'emi' i.id %}" style="color:yellow">Fill EMI Details</a></button></td>
+            {% endif %}
+            {% else %}
+            <td>Pending</td>
+            <td><button disabled="disabled" class="btn btn-warning"><a href="#" >Waiting for Customer Response</a></button></td>
+            {% endif %}
+
+        </tr>
+        {% endfor %}
+    </table>
+         <a href="{% url 'acc_dashboard' %}">Back To Dashboard</a>
+         </div>
+</div>
+{% endblock %}
+
+
+
+
+<!--<td>1  {{i.loan_id_id}}</td>-->
+<!--            <td>2  {{i.loan_id_id.customer_id}}</td>-->
+<!--            <td>3  {{i.loan_id_id_customer_id}}</td>-->
+<!--            <td> 4 {{i.loan_id.id}}</td>-->
+<!--             <td> 5 {{i.customer_id}}</td>-->

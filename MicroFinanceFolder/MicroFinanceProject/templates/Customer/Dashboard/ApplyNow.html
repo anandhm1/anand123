@@ -1,0 +1,39 @@
+{% extends 'Customer/Dashboard/dashboard.html' %}
+{% load static %}
+{% block content %}
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex flex-column h-100">
+                    <p class="mb-1 pt-2 text-bold">Personal Loan</p>
+                    <h5 class="font-weight-bolder">At Your Click</h5>
+                   <ul class="list-group">
+                    <li class="list-group-item">Loan Amount Starting Rs. 25,001/-</li>
+                    <li class="list-group-item">Tenure Choose from 12- 48 months</li>
+                    <li class="list-group-item">LTV Up to 100% * on road funding</li>
+
+                  </div>
+                </div>
+                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
+                  <div class="bg-gradient-primary border-radius-lg h-100">
+                    <img src="{% static 'Customer/dashboard/assets/img/shapes/waves-white.svg' %}" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
+                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                      <img class="w-100 position-relative z-index-2 pt-4" src="{% static 'dashboard/assets/img/illustrations/rocket-white.png' %}" alt="rocket">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <br>
+
+        <br>
+        <div class=" gap-2 col-6 ">
+      <button class="btn btn-primary" type="button"><a href="{% url 'LoanEnquiry' %}" style="color:white">Apply Now</a></button>
+      </div>
+{% endblock %}

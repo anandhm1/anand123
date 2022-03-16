@@ -1,0 +1,11 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+         <h2 style="color:red">Accounts Head Section </h2>
+            <h3>Email sent successfully</h3>
+        <a href="{% url 'loanee_data' %}">Back to Dashboard</a>
+         </div>
+</div>
+{% endblock %}

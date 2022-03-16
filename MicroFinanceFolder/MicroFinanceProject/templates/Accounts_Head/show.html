@@ -1,0 +1,36 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+         <h2 style="color:red">Accounts Head Section </h2>
+
+    <table border="3px">
+        <tr>
+            <th>customer_id</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>Email</th>
+            <th>Sanctioned Amount</th>
+            <th>Enter Loan Details</th>
+
+        </tr>
+        {% for i in obj %}
+        <tr>
+            <td>{{ i.user.id  }}</td>
+            <td>{{ i.user.first_name  }}</td>
+            <td>{{ i.user.last_name  }}</td>
+            <td>{{ i.user.email  }}</td>
+            <td>{{i.sanction_amt}}</td>
+            {% if i.is_loan_details_filled %}
+            <td>Processed to further Desk</td>
+            {% else %}
+            <td><button><a href="{% url 'acc_form' i.id %}">Enter loan Details</a></button></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+        <a href="{% url 'acc_dashboard' %}">Back To Dashboard</a>
+     </div>
+</div>
+{% endblock %}

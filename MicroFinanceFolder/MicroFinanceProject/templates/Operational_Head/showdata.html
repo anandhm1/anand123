@@ -1,0 +1,62 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <a href="{% url 'opr_dashboard' %}">Back to Dashboard</a>
+         <h2 style="color:red"> Loan Applications</h2>
+    <table border="3px">
+        <tr>
+            <th>Customer Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>CIBIL SCORE</th>
+            <th>Sanction Amount</th>
+        </tr>
+
+        {% for i in userobj %}
+          {% if i.username == 'shubhamopr' or i.username == 'shubhamacc' or i.username == 'anand' or i.username == 'oe' or i.username == 'shubham' %}
+        {% else %}
+        <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.email }}</td>
+        {% for j in cibilobj %}
+        {% if j.customer_id == i.id%}
+        <td>{{ j.cibil }}</td>
+            {% if j.is_loan_sanctioned %}
+            <td>Loan Alreday Sanctioned</td>
+            {% else %}
+            <td><button><a href="{% url 'sanction' i.id   %}">Sanction Amount</a> </button></td>
+            {% endif %}
+        {% endif %}
+         {% endfor %}
+            {% endif %}
+        {% endfor %}
+
+        </tr>
+    </table>
+    </div>
+</div>
+{% endblock %}
+
+
+
+<!--<tr>-->
+<!--            {% if i.is_loan_sanctioned %}-->
+<!--            {% else %}-->
+<!--            <td>{{i.customer_id}}</td>-->
+<!--            <td>{{i.first_name}}</td>-->
+<!--            <td>{{i.last_name}}</td>-->
+<!--            <td><button><a href="#">Personal Details</a></button></td>-->
+<!--            <td><button><a href="#">Bank Details</a></button></td>-->
+<!--            <td>{{i.cibil}}</td>-->
+<!--            <td><button><a href="{% url 'sanction' i.customer_id  %}">Pending Click Here to Sanction Amount</a></button></td>-->
+<!--            {% endif %}-->
+<!--        </tr>-->
+<!--      -->
+<!--    </table>-->
+<!--      <a href="{% url 'opr_dashboard' %}">Back to Dashboard</a>-->
+<!--    </div>-->

@@ -1,0 +1,251 @@
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git init
+Initialized empty Git repository in C:/Users/Vinay/Desktop/workspring/.git/
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git remote add origin "https://github.com/vinay-kumbhar/Fdj104.git"
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/vinay-kumbhar/Fdj104
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git add aa.txt
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git commit -m "1st commit"
+[master c05030d] 1st commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 aa.txt
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git push origin mater
+error: src refspec mater does not match any
+error: failed to push some refs to 'https://github.com/vinay-kumbhar/Fdj104.git'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 279 bytes | 55.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vinay-kumbhar/Fdj104.git
+   9284313..c05030d  master -> master
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git add bb.txt
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bb.txt
+
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git commit -m "2nd commit"
+[master cc479c1] 2nd commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bb.txt
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 307 bytes | 307.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vinay-kumbhar/Fdj104.git
+   c05030d..cc479c1  master -> master
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git checkout -b team1
+Switched to a new branch 'team1'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team1)
+$ git add applicationgenerationmodule
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team1)
+$ git commit -m "2nd branch commit"
+[team1 4a76b72] 2nd branch commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 applicationgenerationmodule/New Text Document.txt
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team1)
+$ git push origin team1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 415 bytes | 415.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'team1' on GitHub by visiting:
+remote:      https://github.com/vinay-kumbhar/Fdj104/pull/new/team1
+remote:
+To https://github.com/vinay-kumbhar/Fdj104.git
+ * [new branch]      team1 -> team1
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team1)
+$ git checkout master
+Switched to branch 'master'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git checkout team1
+Switched to branch 'team1'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team1)
+$ git checkout master
+Switched to branch 'master'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git checkout -b team2
+Switched to a new branch 'team2'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team2)
+$ git status
+On branch team2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        CustomerCreate/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team2)
+$ git add CustomerCreate
+warning: LF will be replaced by CRLF in CustomerCreate/.gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/.mvn/wrapper/MavenWrapperDownloader.java.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/.mvn/wrapper/maven-wrapper.properties.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/mvnw.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/mvnw.cmd.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/pom.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/src/main/java/com/app/twl/main/CustomerCreateApplication.java.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/src/main/resources/application.properties.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in CustomerCreate/src/test/java/com/example/demo/CustomerCreateApplicationTests.java.
+The file will have its original line endings in your working directory
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team2)
+$ git commit -m "team2 commit"
+[team2 264eb14] team2 commit
+ 21 files changed, 1779 insertions(+)
+ create mode 100644 CustomerCreate/.gitignore
+ create mode 100644 CustomerCreate/.mvn/wrapper/MavenWrapperDownloader.java
+ create mode 100644 CustomerCreate/.mvn/wrapper/maven-wrapper.jar
+ create mode 100644 CustomerCreate/.mvn/wrapper/maven-wrapper.properties
+ create mode 100644 CustomerCreate/mvnw
+ create mode 100644 CustomerCreate/mvnw.cmd
+ create mode 100644 CustomerCreate/pom.xml
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/CustomerCreateApplication.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Address.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/BankDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Branch.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/BusinessDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/CustomerDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Documents.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Enquiry.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/GuarantorDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Lead.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/PersonalDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/PreviousLoanDetails.java
+ create mode 100644 CustomerCreate/src/main/resources/application.properties
+ create mode 100644 CustomerCreate/src/test/java/com/example/demo/CustomerCreateApplicationTests.java
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team2)
+$ git push origin team2
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (40/40), 58.23 KiB | 1.35 MiB/s, done.
+Total 40 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'team2' on GitHub by visiting:
+remote:      https://github.com/vinay-kumbhar/Fdj104/pull/new/team2
+remote:
+To https://github.com/vinay-kumbhar/Fdj104.git
+ * [new branch]      team2 -> team2
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (team2)
+$ git checkout master
+Switched to branch 'master'
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git merge team2 -m "merge team2"
+Updating cc479c1..264eb14
+Fast-forward (no commit created; -m option ignored)
+ CustomerCreate/.gitignore                          |  31 +++
+ .../.mvn/wrapper/MavenWrapperDownloader.java       | 117 ++++++++
+ CustomerCreate/.mvn/wrapper/maven-wrapper.jar      | Bin 0 -> 50710 bytes
+ .../.mvn/wrapper/maven-wrapper.properties          |   2 +
+ CustomerCreate/mvnw                                | 310 +++++++++++++++++++++
+ CustomerCreate/mvnw.cmd                            | 182 ++++++++++++
+ CustomerCreate/pom.xml                             |  59 ++++
+ .../app/twl/main/CustomerCreateApplication.java    |  13 +
+ .../main/java/com/app/twl/main/model/Address.java  | 159 +++++++++++
+ .../java/com/app/twl/main/model/BankDetails.java   |  41 +++
+ .../main/java/com/app/twl/main/model/Branch.java   |  73 +++++
+ .../com/app/twl/main/model/BusinessDetails.java    |  60 ++++
+ .../com/app/twl/main/model/CustomerDetails.java    | 195 +++++++++++++
+ .../java/com/app/twl/main/model/Documents.java     |  97 +++++++
+ .../main/java/com/app/twl/main/model/Enquiry.java  | 100 +++++++
+ .../com/app/twl/main/model/GuarantorDetails.java   | 122 ++++++++
+ .../src/main/java/com/app/twl/main/model/Lead.java |  74 +++++
+ .../com/app/twl/main/model/PersonalDetails.java    |  90 ++++++
+ .../app/twl/main/model/PreviousLoanDetails.java    |  40 +++
+ .../src/main/resources/application.properties      |   1 +
+ .../demo/CustomerCreateApplicationTests.java       |  13 +
+ 21 files changed, 1779 insertions(+)
+ create mode 100644 CustomerCreate/.gitignore
+ create mode 100644 CustomerCreate/.mvn/wrapper/MavenWrapperDownloader.java
+ create mode 100644 CustomerCreate/.mvn/wrapper/maven-wrapper.jar
+ create mode 100644 CustomerCreate/.mvn/wrapper/maven-wrapper.properties
+ create mode 100644 CustomerCreate/mvnw
+ create mode 100644 CustomerCreate/mvnw.cmd
+ create mode 100644 CustomerCreate/pom.xml
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/CustomerCreateApplication.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Address.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/BankDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Branch.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/BusinessDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/CustomerDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Documents.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Enquiry.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/GuarantorDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/Lead.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/PersonalDetails.java
+ create mode 100644 CustomerCreate/src/main/java/com/app/twl/main/model/PreviousLoanDetails.java
+ create mode 100644 CustomerCreate/src/main/resources/application.properties
+ create mode 100644 CustomerCreate/src/test/java/com/example/demo/CustomerCreateApplicationTests.java
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/vinay-kumbhar/Fdj104.git
+   cc479c1..264eb14  master -> master
+
+Vinay@DESKTOP-OPGC52V MINGW64 ~/Desktop/workspring (master)
+$

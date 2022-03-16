@@ -1,0 +1,58 @@
+{% extends 'Customer/Dashboard/dashboard.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<body>
+    <div class="calculator">
+        <h1><strong>EMI Calculator</strong></h1>
+
+        <!-- Calling Calculate function defined in app.js -->
+        <div class="col-md-6">
+        <div class="form-group">
+            <label class="label" for="amount">Loan Amount</label>
+            <input type="number" class="form-control" id="amount" type="number"
+            onchange="Calculate()">
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="form-group">
+            <label class="label" for="rate">Interest Rate  :</label>
+            <input type="number" class="form-control" id="rate" type="number"
+            onchange="Calculate()">
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="form-group">
+            <label class="label" for="months">Months to Pay :</label>
+            <input type="number" class="form-control" id="months" type="number"
+            onchange="Calculate()">
+        </div>
+        </div>
+        <!--
+        <p>Amount (₹)     :
+            <input id="amount" type="number"
+            onchange="Calculate()">
+        </p>
+
+        <p>Interest Rate  :
+            <input id="rate" type="number"
+            onchange="Calculate()">
+        </p>
+        <p>Months to Pay :
+            <input id="months" type="number"
+            onchange="Calculate()">
+        </p>-->
+        <div class="form-group">
+            <label class="label" for="total"><h2 id="total"></h2></label>
+        </div>
+        </div>
+
+
+    </div>
+
+    <script src="{% static 'Customer/EMICalculator/EMICalculator.js' %}"></script>
+</body>
+{% endblock %}
+
