@@ -1,0 +1,15 @@
+
+       h1 {
+            font-size: 35px;
+        }
+
+        h1 {
+            font-size: 21px;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 7px;
+            width: 70%;
+            margin-top: 7px;
+        }

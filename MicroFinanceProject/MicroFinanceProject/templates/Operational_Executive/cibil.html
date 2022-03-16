@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Register</title>
+<script src="{% static 'myapp/js/jjj.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+<div  id="f3">
+<br>
+<div >
+    <h1>CIBIL Calculation</h1>
+    <form method="post" >
+    {% csrf_token %}
+        <div >
+
+                <label for="id">Castormar ID:</label>
+            <input type="text" id="id" name="customer_id" value="{{obj.id}}" placeholder="customer Id">
+              <br>
+                <label for="fn">Castormar Name:</label>
+            <input type="text" id="fn" name="fn" value="{{obj.first_name}}" placeholder="Name">
+            <input type="text" id="ln" name="ln" value="{{obj.last_name}}" placeholder="Name">
+             <br>
+             <label for="mobile">Mobile Number:</label>
+            <input type="number" id="mobile" value="{{obj.mobile_no}}" name="mobile" placeholder="Mobile Number">
+             <br><br>
+            <label for="email1">Email Address:</label>
+            <input type="email" id="email1" name="email1" value="{{obj.email}}" placeholder="Email Address">
+             <br><br>
+             <label for="pan">Pan Card Number:</label>
+            <input type="text" id="pan" value="{{obj.pancard_no}}" name="pan" placeholder="Pan Card Number">
+             <br><br>
+             <label for="cibil">CIBIL Score:</label>
+            <input type="text" id="cibil" value="{{obj.cibil}}" name="cibil" placeholder="CIBIL Score">
+            <br><br>
+
+             <label for="status">CIBIL Status:</label>
+            <input type="text" id="status" value="{{obj.status}}" name="status" placeholder="CIBIL Status">
+        <br><br>
+            <input type="submit" class="btn btn-success">
+            </div>&nbsp;
+    </form>
+     <input type="submit" class="btn btn-success" value="Calculate" onclick="calculate(500,950)">
+    </div>
+    <br>
+</div>
+</div>
+</div>
+
+{% endblock %}

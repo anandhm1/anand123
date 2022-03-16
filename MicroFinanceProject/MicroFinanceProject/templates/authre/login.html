@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Register</title>
+<style>
+#body{
+width:430px;
+height:430px;
+border-radius: 25px;
+margin-top:50px;
+}
+#dd{
+border-radius:10px;
+background-color:#ffffff;
+box-shadow:5px 5px 5px #8585ad;
+}
+#dd label{
+
+}
+</style>
+{% endblock %}
+{% block content %}
+<center>
+<div class="container" id="body">
+    <div class="jumbotron" id="dd" >
+        <form method="post">
+            {% csrf_token %}
+            <label for="un">User Name</label>
+            <input name="un" id="un" type="text">
+            <br><br>
+            <label for="pw">User Password</label>
+            <input name="pw" id="pw" type="password">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+    </center>
+{% endblock %}

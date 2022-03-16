@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Register</title>
+{% endblock %}
+{% block content %}
+
+<div style="background-image:url('{% static 'myapp/images/car.jpg' %}')" id="f3">
+<br>
+<div id="f1"  >
+        <h1 style="color:white;">Register Here</h1>
+    <form method="post" >
+    {% csrf_token %}
+        <div id="f2">
+            <div >
+            <input type="text" style="width:130px;" name="fn" placeholder="First Name">
+            <input type="text" style="width:130px; margin-left:30px;" name="ln" placeholder="Last Name">
+            </div>
+             <br>
+
+            <input type="number" name="mobile" placeholder="Mobile Number">
+             <br><br>
+            <input type="email" name="email1" placeholder="Email Address">
+             <br><br>
+     <div style="display:flex;" id="r1">
+
+        <label for="male" style="color:white;">Male</label>
+        <input type="radio" name="gender" id="male" value="male" style="height:25px; width:25px; " checked>
+        <label for="female" style="color:white;margin-left:20px;" >Female</label>
+        <input type="radio" name="gender" id="female" value="female" style="height:25px; width:25px; vertical-align: middle;">
+         <label for="Transgender" style="color:white;margin-left:20px;" >Transgender</label>
+        <input type="radio" name="gender" id="Transgender" value="Transgender" style="height:25px; width:25px; vertical-align: middle;">
+      </div>
+             <br>
+            <input type="date" name="birth" placeholder="Brith of Date">
+             <br><br>
+            <input type="text" name="pan" placeholder="Pan Card Number">
+             <br><br>
+            <input type="text" name="city" placeholder="City">
+
+            <br><br>
+        <input type="submit" class="btn btn-success">Register</input>
+            </div>
+    </form>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

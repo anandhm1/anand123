@@ -1,0 +1,8 @@
+{% extends 'Customer/Dashboard/dashboard.html' %}
+{% load static %}
+{% block content %}
+      <form method="post">
+          {% csrf_token %}
+          <input type="submit" value="Send Confirmation to Customer"/>
+      </form>
+{% endblock %}

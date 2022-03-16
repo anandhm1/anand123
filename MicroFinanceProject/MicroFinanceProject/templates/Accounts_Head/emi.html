@@ -1,0 +1,89 @@
+{% extends 'navlayout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                <h2 style="color:black">Customer EMI Details</h2>
+                <tr>
+                     <td>
+                        <label for="cid" style="color:green">Customer ID</label>
+                        <h3 style="color:black"> {{ obj.loan_id.customer.customer_id}}</h3>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="cname" style="color:green">Customer Name</label>
+                        <h3 style="color:black"> {{ obj.loan_id.customer.first_name}} {{ obj.loan_id.customer.last_name}}</h3>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="amt" style="color:green">Sanctioned Amount</label>
+                        <h3 style="color:black"> {{ obj.loan_id.sanction_amt}} </h3>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="roi" style="color:green">Rate of Interest</label>
+                        <h3 style="color:black"> {{ obj.rate_of_interest}} </h3>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="loan_tenure" style="color:green">loan_tenure</label>
+                        <h3 style="color:black"> {{ obj.loan_tenure}} </h3>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                        <label for="total_amt" style="color:green">total_amt</label>
+                        <h3 style="color:black"> {{ obj.total_amt}} </h3>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="mothly_emi_amt" style="color:green">mothly_emi_amt</label>
+                        <input type="number" name="mothly_emi_amt" class="form-control"/>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="interest" style="color:green">interest</label>
+                        <input type="number" name="interest" class="form-control"/>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="gst" style="color:green">Enter GST</label>
+                        <input type="number" name="gst" class="form-control"/>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="total_amt" style="color:green">total_amt</label>
+                        <input type="number" name="total_amt" class="form-control"/>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="due_date" style="color:green">Due Date</label>
+                        <input type="date" name="due_date" class="form-control"/>
+                     </td>
+                 </tr>
+                <tr>
+                     <td>
+                        <label for="last_payment_status" style="color:green">last_payment_status</label>
+                        <input type="text" name="last_payment_status" class="form-control"/>
+                     </td>
+                 </tr>
+            </table>
+            <button type="submit">Disburse Loan</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
